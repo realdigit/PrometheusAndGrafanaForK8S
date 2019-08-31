@@ -3,11 +3,14 @@ kind: Deployment
 metadata:
   name: grafana-core
   namespace: kube-system
+  labels:
+    app: grafana
+    component: core
+spec:
   selector:
     matchLabels:
       app: grafana
       component: core
-spec:
   replicas: 1
   template:
     metadata:
